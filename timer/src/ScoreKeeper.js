@@ -3,13 +3,13 @@ import React, {Component} from 'react'
 class ScoreKeeper extends Component {
     constructor(props) {
         super(props);
-        this.state = {scoreKeep: this.props.score}
+        this.state = {scoreKeep: this.props.scoreKeep}
     }
 
     buttonClick = () => {
         this.setState(
             {
-                score: this.state.scoreKeep+1
+                scoreKeep: this.state.scoreKeep+1
             }
         )
     };
@@ -17,10 +17,8 @@ class ScoreKeeper extends Component {
     render() {
         return (
             <div>
-                <h1>Template</h1>
+                <h1>Score: <span>{this.state.scoreKeep}</span></h1>
                 <button onClick={this.buttonClick}>Enter</button>
-                <h2>points:</h2>
-                <h2>{this.state.scoreKeep}</h2>
             </div>
         );
     }
